@@ -40,6 +40,11 @@ jobs:
             keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
           fi
 
+      - name: Configure Gradle for CI
+        run: |
+          # Remove in-process compiler execution strategy to let KSP2 compile out-of-process using the daemon, resolving the IntelliJ OpenAPI NullPointerException
+          sed -i '/kotlin.compiler.execution.strategy=in-process/d' gradle.properties
+
       - name: Generate Gradle Wrapper
         run: |
           gradle wrapper
