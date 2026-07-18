@@ -1,0 +1,6 @@
+{
+  "name": "mikamusic",
+  "description": "An elegant, Apple Music-inspired player with high-fidelity DAC bypass simulation, lossless source selectors, and fluid, responsive glassmorphic interfaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
